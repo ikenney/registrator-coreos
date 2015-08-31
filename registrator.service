@@ -7,7 +7,7 @@ Requires=consul.service
 ExecStartPre=-/usr/bin/docker kill registrator
 ExecStartPre=-/usr/bin/docker rm registrator
 ExecStartPre=/usr/bin/docker pull gliderlabs/registrator
-ExecStart=/usr/bin/docker run --volume /var/run/docker.sock:/var/run/docker.sock --hostname ${HOSTNAME} --name registrator progrium/registrator consul:
+ExecStart=/usr/bin/docker run --volume /var/run/docker.sock:/var/run/docker.sock --hostname ${HOSTNAME} --name registrator gliderlabs/registrator consul:
 ExecStop=/usr/bin/docker stop registrator
 
 [X-Fleet]
